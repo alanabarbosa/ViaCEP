@@ -5,4 +5,4 @@ Aplicação feita em Javascript, para consultar CEP de endereçamento do Brasil 
 # Imagens 📸
 <img src="images/readme.png">
 
-<img src="images/readme2.png>
+<img src="images/readme2.png">
