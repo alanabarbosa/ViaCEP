@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css" >
+    <title>Busca CEP</title>
+</head>
+<body>
+
+    <div class="painel formulario" data-form="form">
+        <form action="" id="buscaCep">
+            <label for="cep">Digite um CEP</label>
+            <br>
+            <input type="text" name="cep" id="cep" class="borderRed">      
+            <input type="button" value="Buscar" id="btnCep" data-modal="abrir">
+        </form>
+    </div>
+    <div class="painel " data-form="form">
+        <div class="container">
+            <div class="resultadoCep box-info">
+                <h1>Rua</h1>
+                <div id="nomeRua" class="info"></div> 
+            </div>
+            <div class="resultadoCep box-info">
+                <h1>Bairro</h1>
+                <div  id="nomeBairro" class="info"></div> 
+            </div>
+            <div class="resultadoCep box-info">
+                <h1>Complemento</h1>
+                <div id="complemento" class="info"></div>
+            </div>
+            <div class="resultadoCep box-info">
+                <h1>Gia</h1>
+                <div id="gia" class="info"></div>
+            </div>
+            <div class="resultadoCep box-info">
+                <h1>IGBE</h1>
+                <div id="ibge" class="info"></div>
+            </div>
+            <div class="resultadoCep box-info">
+                <h1>Localidade</h1>
+                <div id="localidade" class="info"></div>
+            </div>
+            <div class="resultadoCep box-info">
+                <h1>UF</h1>
+                <div id="uf" class="info"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box_img"> 
+        <img src="images/searchlocalitation.svg" alt="Procurando localizacao">
+    </div>
+    <div class="box_img2">        
+        <img src="images/uplocalitation.svg" alt="Encontrou a localizacao">
+    </div>
+<section class="modal-container" data-modal="container">
+    <div class="modal">
+        <button data-modal="fechar" class="fechar">x</button>
+        <h1>DIGITE UM CEP</h1>
+    </div>
+</section>
+<script src="js/script.js"></script>
+</body>
+</html>
