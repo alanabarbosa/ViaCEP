@@ -5,7 +5,6 @@
         const box = document.querySelectorAll('.info')
         const img = document.querySelector('.box_img')
         const img2 = document.querySelector('.box_img2')
-            // console.log();
 
         btnCep.addEventListener('click', handleClick);
 
@@ -22,9 +21,6 @@
             }
         }
         isEmpty()
-
-
-
 
         function buscaCep(cep) {
             fetch(`https://viacep.com.br/ws/${cep}/json/`)
@@ -46,12 +42,12 @@
                     uf.innerText = body.uf;
                     img2.style.display = "flex";
                     img.style.display = "none";
-                }).catch(erro => {
-                    alert(erro)
+                }).catch(e => {
+                    console.log('Não encontrado')
                 })
         }
     }
-    initFetchBitcoin()
+    initFetchCep()
 
     function initModal() {
         const botaoAbrir = document.querySelector('[data-modal="abrir"]');
