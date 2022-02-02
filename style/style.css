@@ -2,22 +2,27 @@
     margin: 0;
     padding: 0;
 }
+
 body {
     background: #0E091B;
 }
+
 h1 {
     text-align: center;
     font-family: 'Poppins', sans-serif;
     color: #fff;
     font-size: 20px;
 }
+
 .painel {
     margin-top: 30px;
 }
-.formulario { 
+
+.formulario {
     display: flex;
     justify-content: center;
 }
+
 .formulario label {
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
@@ -26,19 +31,20 @@ h1 {
     justify-content: center;
     font-size: 30px;
     color: #fff;
-
 }
-#cep { 
+
+#cep {
     width: 500px;
     padding: 10px;
-    background: #fff2;  
+    background: #fff2;
     border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;    
+    border-bottom-left-radius: 8px;
     border: 2px solid #5429cf;
     color: #fff;
     font-size: 13px;
     font-family: 'Poppins', sans-serif;
 }
+
 #btnCep {
     border-left: none;
     padding: 14px 26px 15px;
@@ -51,23 +57,27 @@ h1 {
     text-transform: uppercase;
     border: none
 }
+
 #btnCep:onfocus {
     border: none;
 }
-.container {
+
+.resultadosDados {
     display: flex;
     width: 100%;
+    max-width: 1040px;
     justify-content: center;
     align-items: center;
     max-width: 1080px;
-    margin: 10px auto;    
-    flex: 1;  
+    margin: 10px auto;
     flex-wrap: wrap;
 }
-.box-info {    
-    margin-top: 10px; 
-    margin-right: 30px;    
+
+.box-info {
+    margin-top: 10px;
+    margin-right: 30px;
 }
+
 .info {
     border: 2px solid #5429cf;
     padding: 10px 30px;
@@ -77,6 +87,7 @@ h1 {
     font-family: 'Poppins', sans-serif;
     width: 150px;
 }
+
 .modal-container {
     height: 100vh;
     width: 100%;
@@ -102,9 +113,11 @@ h1 {
     min-width: 300px;
     border-radius: 2px
 }
+
 .modal h1 {
     color: #000
 }
+
 @keyframes modal {
     from {
         opacity: 0;
@@ -162,36 +175,23 @@ h1 {
     font-weight: bold;
     cursor: pointer;
 }
-@media (max-width: 700px) {
-    #cep {
-        width: 60%;
-    }
-    #btnCep {
-        width: 30%;
-        font-size: 13px
-    }
-    .modal {
-        min-width: 0;
-    }
-    img {
-        width: 100%;
-    }
-}
+
 .box_img {
     display: flex;
-    justify-content: center;   
+    justify-content: center;
     animation: show-down .5s forwards;
-
 }
+
 .box_img2 {
     display: flex;
     justify-content: center;
     animation: show-down .5s forwards;
 }
+
 img {
     width: 56%;
-
 }
+
 @keyframes show-right {
     from {
         opacity: 0;
@@ -201,5 +201,25 @@ img {
         opacity: 1;
         transform: translate3d(0, 0, 0);
         ;
+    }
+}
+
+@media (max-width: 700px) {
+    #cep {
+        width: 60%;
+    }
+    #btnCep {
+        width: 30%;
+        font-size: 13px;
+        padding: 14px 18px 15px;
+    }
+    .modal {
+        min-width: 0;
+    }
+    img {
+        width: 100%;
+    }
+    .box-info {
+        margin-right: 0;
     }
 }
