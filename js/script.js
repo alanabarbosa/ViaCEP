@@ -2,8 +2,9 @@
         const inputCep = document.getElementById('cep');
         const btnCep = document.getElementById('btnCep')
         const box = document.querySelectorAll('.info')
-        const img = document.querySelector('.box_img')
-        const img2 = document.querySelector('.box_img2')
+        const img = document.querySelector('.img1')
+        const img2 = document.querySelector('.img2')
+        const img3 = document.querySelector('.img3')
 
         btnCep.addEventListener('click', handleClick);
 
@@ -29,10 +30,16 @@
                         ibge.innerText = body.ibge;
                         localidade.innerText = body.localidade;
                         uf.innerText = body.uf;
+                        if (inputCep.value === undefined) {
+                            alert('eee')
+                        }
                         img2.style.display = "flex";
                         img.style.display = "none";
                     }).catch(e => {
-                        console.log('Não encontrado')
+                        alert('CEP INVÁLIDO')
+                        img2.style.display = "none";
+                        img.style.display = "none";
+                        img3.style.display = "flex";
                     })
             }
             buscaCep(cep);
@@ -41,6 +48,7 @@
         function isEmpty() {
             if (Object.keys(box).length !== 0) {
                 img2.style.display = "none";
+                img3.style.display = "none";
                 img.style.display = "flex";
             }
         }

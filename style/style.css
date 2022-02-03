@@ -179,17 +179,11 @@ h1 {
 .box_img {
     display: flex;
     justify-content: center;
-    animation: show-down .5s forwards;
-}
-
-.box_img2 {
-    display: flex;
-    justify-content: center;
-    animation: show-down .5s forwards;
 }
 
 img {
     width: 56%;
+    animation: show-right .5s forwards;
 }
 
 @keyframes show-right {
