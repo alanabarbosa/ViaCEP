@@ -16,27 +16,30 @@
                 fetch(`https://viacep.com.br/ws/${cep}/json/`)
                     .then(response => response.json())
                     .then(body => {
-                        const nomeRua = document.getElementById('nomeRua')
-                        const nomeBairro = document.getElementById('nomeBairro')
-                        const complemento = document.getElementById('complemento')
-                        const gia = document.getElementById('gia')
-                        const ibge = document.getElementById('ibge')
-                        const localidade = document.getElementById('localidade')
-                        const uf = document.getElementById('uf')
-                        nomeRua.innerText = body.logradouro;
-                        nomeBairro.innerText = body.bairro;
-                        complemento.innerText = body.complemento;
-                        gia.innerText = body.gia;
-                        ibge.innerText = body.ibge;
-                        localidade.innerText = body.localidade;
-                        uf.innerText = body.uf;
-                        if (inputCep.value === undefined) {
-                            alert('eee')
+                        if (body.erro) {
+                            img2.style.display = "none";
+                            img3.style.display = "flex";
+                            img.style.display = "none";
+                        } else {
+                            const nomeRua = document.getElementById('nomeRua')
+                            const nomeBairro = document.getElementById('nomeBairro')
+                            const complemento = document.getElementById('complemento')
+                            const gia = document.getElementById('gia')
+                            const ibge = document.getElementById('ibge')
+                            const localidade = document.getElementById('localidade')
+                            const uf = document.getElementById('uf')
+                            nomeRua.innerText = body.logradouro;
+                            nomeBairro.innerText = body.bairro;
+                            complemento.innerText = body.complemento;
+                            gia.innerText = body.gia;
+                            ibge.innerText = body.ibge;
+                            localidade.innerText = body.localidade;
+                            uf.innerText = body.uf;
+                            img2.style.display = "flex";
+                            img.style.display = "none";
+                            img3.style.display = "none";
                         }
-                        img2.style.display = "flex";
-                        img.style.display = "none";
                     }).catch(e => {
-                        alert('CEP INVÁLIDO')
                         img2.style.display = "none";
                         img.style.display = "none";
                         img3.style.display = "flex";
@@ -46,15 +49,14 @@
         }
 
         function isEmpty() {
-            if (Object.keys(box).length !== 0) {
+            if (document.getElementById("cep").value == "") {
                 img2.style.display = "none";
                 img3.style.display = "none";
                 img.style.display = "flex";
+                return
             }
         }
         isEmpty()
-
-
     }
     initFetchCep()
 
@@ -62,6 +64,7 @@
         const botaoAbrir = document.querySelector('[data-modal="abrir"]');
         const botaoFechar = document.querySelector('[data-modal="fechar"]');
         const containerModal = document.querySelector('[data-modal="container"]');
+        const modal = document.querySelector('.modal h1')
 
         if (botaoAbrir && botaoFechar && containerModal) {
             function abrirModal(event) {
